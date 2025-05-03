@@ -25,6 +25,6 @@ addPythonModule(
         nifty/graph/opt/mincut  
     SOURCES
         ${MOD_SOURCES}
-    LIBRRARIES
+    LIBRARIES
         ${MOD_LIBS}
 )

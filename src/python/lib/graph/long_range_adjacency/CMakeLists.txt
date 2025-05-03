@@ -7,7 +7,7 @@ addPythonModule(
         adjacency.cxx 
         long_range_adjacency.cxx
         long_range_features.cxx
-    LIBRRARIES
+    LIBRARIES
         ${HDF5_LIBRARIES}
         ${Boost_SYSTEM_LIBRARY}    
 )

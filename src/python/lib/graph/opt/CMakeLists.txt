@@ -14,7 +14,7 @@ addPythonModule(
         nifty/graph/opt  
     SOURCES
         opt.cxx
-    #LIBRRARIES
+    #LIBRARIES
     #    ${MOD_LIBS}
 )
 

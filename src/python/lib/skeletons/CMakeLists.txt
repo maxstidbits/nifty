@@ -5,7 +5,7 @@ addPythonModule(
     SOURCES
         skeletons.cxx
         evaluation.cxx
-    LIBRRARIES
+    LIBRARIES
         ${Z5_COMPRESSION_LIBRARIES}
         ${FILESYSTEM_LIBRARIES}    
         Threads::Threads

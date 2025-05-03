@@ -11,7 +11,7 @@ addPythonModule(
         lifted_utils.cxx
         morphology.cxx
         edge_morphology.cxx
-    LIBRRARIES
+    LIBRARIES
         # ${FASTFILTERS_LIBRARY}
         ${Z5_COMPRESSION_LIBRARIES}
         ${FILESYSTEM_LIBRARIES}    

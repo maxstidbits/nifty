@@ -6,7 +6,7 @@ addPythonModule(
         transformation.cxx
         affine_transformation.cxx
         coordinate_transformation.cxx
-    LIBRRARIES
+    LIBRARIES
         ${HDF5_LIBRARIES} 
         ${FASTFILTERS_LIBRARY}
         ${Z5_COMPRESSION_LIBRARIES}

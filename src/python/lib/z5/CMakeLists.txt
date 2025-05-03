@@ -5,7 +5,7 @@ addPythonModule(
     SOURCES
         z5.cxx
         dataset_wrapper.cxx
-    LIBRRARIES
+    LIBRARIES
         ${Z5_COMPRESSION_LIBRARIES} 
         ${FILESYSTEM_LIBRARIES} 
         Threads::Threads

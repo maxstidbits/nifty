@@ -28,7 +28,7 @@ addPythonModule(
         nifty/graph/opt/multicut  
     SOURCES
         ${MOD_SOURCES}
-    LIBRRARIES
+    LIBRARIES
         ${MOD_LIBS}
 )
 

@@ -27,7 +27,7 @@ addPythonModule(
         nifty/graph/opt/lifted_multicut  
     SOURCES
         ${MOD_SOURCES}
-    LIBRRARIES
+    LIBRARIES
         ${HDF5_LIBRARIES}
 
 )
