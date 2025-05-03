@@ -10,7 +10,7 @@ dependencies:
   - libvigra
   # Vigra Numpy is used at link time too
   - vigra
-  - z5py >=2.0.11
+  - z5py >=2.0.20
   # build dependencies needed for z5
   - nlohmann_json
   - blosc
