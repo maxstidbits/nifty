@@ -2,7 +2,7 @@ name: nifty-build-env
 channels:
   - conda-forge
 dependencies:
-  - boost-cpp>=1.63
+  - libboost-devel
   - cmake
   - compilers
   - h5py
