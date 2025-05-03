@@ -2,10 +2,10 @@
 
 #include <random>
 #include <thread>
-#include "xtensor/xexpression.hpp"
+#include "xtensor/core/xexpression.hpp"
 
-#include "xtensor/xview.hpp"
-#include "xtensor/xmath.hpp"
+#include "xtensor/views/xview.hpp"
+#include "xtensor/core/xmath.hpp"
 #include "nifty/graph/undirected_list_graph.hxx"
 
 #include "nifty/array/arithmetic_array.hxx"
@@ -63,4 +63,3 @@ namespace nifty{
 
     }
 }
-

@@ -3,8 +3,8 @@
 #include <vector>
 #include <cmath>
 
-#include "xtensor/xtensor.hpp"
-#include "xtensor/xeval.hpp"
+#include "xtensor.hpp"
+#include "xtensor/core/xeval.hpp"
 
 #include "nifty/tools/array_tools.hxx"
 
@@ -102,9 +102,9 @@ namespace graph{
     }
 
 
-    // FIXME FIXME FIXME 
+    // FIXME FIXME FIXME
     // FIXME !!! we waste a lot for zDirection != 0, because we always load both slices, which is totally
-    // unncessary. Instead, we should have 2 seperate functons (z = 0 / z = 1,2) that get called with the proper 
+    // unncessary. Instead, we should have 2 seperate functons (z = 0 / z = 1,2) that get called with the proper
     // labels and data
     //
     // accumulate filter for the between slice edges

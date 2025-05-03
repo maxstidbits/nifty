@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xtensor/xarray.hpp"
+#include "xtensor/containers/xarray.hpp"
 #include "nifty/xtensor/xtensor.hxx"
 
 #include "nifty/array/arithmetic_array.hxx"

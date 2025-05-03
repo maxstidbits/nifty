@@ -3,7 +3,7 @@
 #include <array>
 #include <vector>
 
-#include "xtensor/xtensor.hpp"
+#include "xtensor.hpp"
 #include "nifty/tools/runtime_check.hxx"
 
 namespace nifty{

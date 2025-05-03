@@ -12,7 +12,7 @@
 #include "nifty/graph/agglo/cluster_policies/cluster_policies_common.hxx"
 #include <iostream>
 #include <algorithm>    // std::max
-#include <xtensor/xview.hpp>
+#include <xtensor/views/xview.hpp>
 using namespace xt::placeholders;
 
 
@@ -633,4 +633,3 @@ namespace nifty{
         } // namespace agglo
     } // namespace nifty::graph
 } // namespace nifty
-

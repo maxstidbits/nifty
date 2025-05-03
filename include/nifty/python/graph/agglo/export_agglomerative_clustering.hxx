@@ -7,8 +7,8 @@
 #include "nifty/python/graph/undirected_list_graph.hxx"
 #include "nifty/graph/agglo/agglomerative_clustering.hxx"
 
-#include <xtensor/xtensor.hpp>
-#include <xtensor/xlayout.hpp>
+#include <xtensor.hpp>
+#include <xtensor/core/xlayout.hpp>
 #include <xtensor-python/pyarray.hpp>     // Numpy bindings
 #include <xtensor-python/pytensor.hpp>     // Numpy bindings
 
@@ -134,9 +134,9 @@ namespace agglo{
         typedef DendrogramAgglomerativeClusteringVisitor<AgglomerativeClusteringType> DendrogramAgglomerativeClusteringVisitorType;
 
         // dendrogram visitor
-        {   
+        {
             typedef DendrogramAgglomerativeClusteringVisitorType VisitorType;
-            const auto visitorClsName = std::string("DendrogramAgglomerativeClusteringVisitor") 
+            const auto visitorClsName = std::string("DendrogramAgglomerativeClusteringVisitor")
                 + clusterPolicyClsName;
 
             auto visitorCls = py::class_<VisitorType>(aggloModule, visitorClsName.c_str());
@@ -298,11 +298,10 @@ namespace agglo{
             },
             py::return_value_policy::take_ownership,
             py::keep_alive<0,1>(),
-            py::arg("clusterPolicy") 
+            py::arg("clusterPolicy")
         );
     }
 
 } // end namespace agglo
 } // end namespace graph
 } // end namespace nifty
-    
