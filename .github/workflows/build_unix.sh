@@ -1,6 +1,9 @@
 #!/bin/bash
 
-cmake . \
+mkdir -p bld
+cd bld
+
+cmake .. \
     -DWITHIN_TRAVIS=ON \
     -DWITH_QPBO=OFF \
     -DWITH_HDF5=ON \
@@ -13,7 +16,7 @@ cmake . \
     -DBUILD_CPP_TEST=OFF \
     -DCMAKE_PREFIX_PATH="$CONDA_PREFIX" \
     -DPython_EXECUTABLE="${CONDA_PREFIX}/bin/python" \
-    -DCMAKE_INSTALL_PREFIX="$CONDA_PREFIX" \
+    -DCMAKE_INSTALL_PREFIX="${CONDA_PREFIX}" \
     -DBUILD_NIFTY_PYTHON=ON
 make -j 4
 make install

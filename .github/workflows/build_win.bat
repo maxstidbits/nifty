@@ -1,5 +1,7 @@
 REM https://stackoverflow.com/questions/6832666/lnk2019-when-including-asio-headers-solution-generated-with-cmake
-cmake . -G "NMake Makefiles" ^
+mkdir bld
+cd bld
+cmake .. -G "NMake Makefiles" ^
     -DWITH_QPBO=OFF ^
     -DWITH_GLPK=OFF ^
     -DWITH_CPLEX=OFF ^
