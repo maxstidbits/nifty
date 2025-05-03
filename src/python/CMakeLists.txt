@@ -10,14 +10,12 @@ include_directories(${pybind11_INCLUDE_DIRS})
 add_subdirectory(test)
 add_subdirectory(lib)
 
-# Normalize the install directory.
-file(TO_CMAKE_PATH
-  "${CMAKE_BINARY_DIR}/python/nifty"
-  _NIFTY_PY_DIR
-)
+# message(STATUS "Python_SITELIB ${Python_SITELIB}")
+# Seems like with cmake 4 this is no longer so forgiving???
+# This line will convert backslashes to forward slash
+# which are "safer" for cmake
+file(TO_CMAKE_PATH "${Python_SITELIB}" Python_SITELIB)
+# message(STATUS "Python_SITELIB ${Python_SITELIB}")
 
-# Now use the normalized path in the install() call.
-install(
-  DIRECTORY "${_NIFTY_PY_DIR}"
-  DESTINATION "${Python_SITELIB}"
-)
+install(DIRECTORY "${CMAKE_BINARY_DIR}/python/nifty"
+    DESTINATION ${Python_SITELIB})
