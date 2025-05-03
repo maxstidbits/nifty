@@ -10,5 +10,14 @@ include_directories(${pybind11_INCLUDE_DIRS})
 add_subdirectory(test)
 add_subdirectory(lib)
 
-install(DIRECTORY ${CMAKE_BINARY_DIR}/python/nifty
-    DESTINATION ${Python_SITELIB})
+# Normalize the install directory.
+file(TO_CMAKE_PATH
+  "${CMAKE_BINARY_DIR}/python/nifty"
+  _NIFTY_PY_DIR
+)
+
+# Now use the normalized path in the install() call.
+install(
+  DIRECTORY "${_NIFTY_PY_DIR}"
+  DESTINATION "${Python_SITELIB}"
+)
