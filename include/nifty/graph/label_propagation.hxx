@@ -16,11 +16,11 @@
 // #include "nifty/graph/edge_contraction_graph.hxx"
 // #include "nifty/graph/agglo/cluster_policies/cluster_policies_common.hxx"
 #include <iostream>
-#include "xtensor/xarray.hpp"
+#include "xtensor/containers/xarray.hpp"
 
 #include "nifty/parallel/threadpool.hxx"
 #include <ctime> // Random seed for shuffle
-#include <xtensor/xrandom.hpp>
+#include <xtensor/generators/xrandom.hpp>
 
 
 namespace nifty{

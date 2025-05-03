@@ -12,7 +12,7 @@ addPythonModule(
         connected_components.cxx
         label_propagation.cxx
         accumulate_long_range_affinities.cxx
-        LIBRRARIES
+        LIBRARIES
         ${HDF5_LIBRARIES} 
 )
 

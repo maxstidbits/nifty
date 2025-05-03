@@ -15,7 +15,7 @@ addPythonModule(
         merge_helper.cxx
         label_multiset.cxx
         rle.cxx
-    LIBRRARIES
+    LIBRARIES
         ${HDF5_LIBRARIES}
         ${Z5_COMPRESSION_LIBRARIES}
         ${FILESYSTEM_LIBRARIES}    

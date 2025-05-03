@@ -1,7 +1,7 @@
 #pragma once
 
-#include "xtensor/xarray.hpp"
-#include "xtensor/xstrided_view.hpp"
+#include "xtensor/containers/xarray.hpp"
+#include "xtensor/views/xstrided_view.hpp"
 
 namespace nifty {
 

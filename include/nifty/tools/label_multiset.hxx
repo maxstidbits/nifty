@@ -1,6 +1,6 @@
 #include <unordered_map>
 #include <boost/functional/hash.hpp>
-#include "xtensor/xtensor.hpp"
+#include "xtensor.hpp"
 #include "nifty/tools/blocking.hxx"
 
 namespace nifty {

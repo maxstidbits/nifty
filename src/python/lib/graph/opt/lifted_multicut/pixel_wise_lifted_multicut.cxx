@@ -6,8 +6,8 @@
 
 
 
-#include <xtensor/xtensor.hpp>
-#include <xtensor/xlayout.hpp>
+#include <xtensor.hpp>
+#include <xtensor/core/xlayout.hpp>
 #include "xtensor-python/pyarray.hpp"     // Numpy bindings
 #include "xtensor-python/pytensor.hpp"     // Numpy bindings
 
@@ -35,7 +35,7 @@ namespace lifted_multicut{
             [](
                 xt::pytensor<float,DIM+1> weights,
                 xt::pytensor<int,  2> offsets
-            ) { 
+            ) {
                 ObjType * a;
                 {
                     py::gil_scoped_release allowThreads;
@@ -85,7 +85,7 @@ namespace lifted_multicut{
 
 
         std::string fmClsName = std::string("PixelWiseLmcConnetedComponentsFusion") + std::to_string(DIM) + std::string("D");
-        
+
         typedef typename CCFusionType::CCLmcFactoryBase CCLmcFactoryBase;
         typedef std::shared_ptr<CCLmcFactoryBase> CCLmcFactoryBaseSharedPtr;
 
@@ -93,14 +93,14 @@ namespace lifted_multicut{
 
 
         py::class_<CCFusionType>(liftedMulticutModule, fmClsName.c_str())
-            
+
 
 
             .def(py::init(
             [](
                 const ObjType & objective,
                 CCLmcFactoryBaseSharedPtr solver_factory
-            ) { 
+            ) {
                 CCFusionType * ret;
                 {
                     py::gil_scoped_release allowThreads;
@@ -158,7 +158,7 @@ namespace lifted_multicut{
                 return nifty::graph::opt::lifted_multicut::pixel_wise_lmc_edge_gt_2d(gt, offsets);
             }
         );
-            
+
     }
 
 

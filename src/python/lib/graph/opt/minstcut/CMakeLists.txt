@@ -18,6 +18,6 @@ addPythonModule(
         nifty/graph/opt/minstcut  
     SOURCES
         ${MOD_SOURCES}
-    LIBRRARIES
+    LIBRARIES
         ${MOD_LIBS}
 )

@@ -3,6 +3,6 @@ addPythonModule(
         nifty/carving
     SOURCES
         carving.cxx
-    LIBRRARIES
+    LIBRARIES
         ${FILESYSTEM_LIBRARIES}
 )

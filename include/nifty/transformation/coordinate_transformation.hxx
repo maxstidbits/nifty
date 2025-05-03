@@ -1,5 +1,5 @@
 #pragma once
-#include <xtensor/xarray.hpp>
+#include <xtensor/containers/xarray.hpp>
 #include "nifty/tools/for_each_coordinate.hxx"
 #include "nifty/xtensor/xtensor.hxx"
 

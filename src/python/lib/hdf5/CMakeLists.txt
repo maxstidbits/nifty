@@ -12,6 +12,6 @@ addPythonModule(
         hdf5_array.cxx
         #hdf5_watershed.cxx
         hdf5_benchmark.cxx
-    LIBRRARIES
+    LIBRARIES
         ${HDF5_LIBRARIES}
 )

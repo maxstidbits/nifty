@@ -18,7 +18,7 @@
 
 #include "nifty/graph/rag/detail_rag/compute_grid_rag.hxx"
 
-#include "xtensor/xtensor.hpp"
+#include "xtensor.hpp"
 #include "nifty/xtensor/xtensor.hxx"
 
 #ifdef WITH_HDF5

@@ -38,7 +38,7 @@ macro(addPythonModule)
 
     set(options "")
     set(oneValueArgs NESTED_NAME)
-    set(multiValueArgs SOURCES LIBRRARIES)
+    set(multiValueArgs SOURCES LIBRARIES)
     cmake_parse_arguments(ADD_PY_MOD "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN} )
 
     #message(STATUS "BRAAA"  ${ADD_PY_MOD_NESTED_NAME})
@@ -60,17 +60,23 @@ macro(addPythonModule)
     #endif()
     set_target_properties(_${MODULE_NAME}  PROPERTIES PREFIX "")
 
-    #message(STATUS ********Module: ${MODULE_NAME})
-    #message(STATUS ********Libs: ${ADD_PY_MOD_LIBRRARIES})
+    # message(STATUS ********Module: ${MODULE_NAME})
+    # message(STATUS ********Libs: ${ADD_PY_MOD_LIBRARIES})
 
     # NOTE it's not necessary to link against the python library here
     # and if we do, this causes seg-faults on mac, so don't do it!
     # link additional libraries
     target_link_libraries(_${MODULE_NAME}
-        PUBLIC
-        # ${PYTHON_LIBRARIES}
-        ${ADD_PY_MOD_LIBRRARIES}
+        PRIVATE
+        ${ADD_PY_MOD_LIBRARIES}
     )
+    if(MSVC)
+        # Doing this linking for all platforms causes segfaults on mac
+        # and is not necessary on linux
+        # But it avoids linking to the debug libraries in windows....
+        target_link_libraries(_${MODULE_NAME} PRIVATE ${Python_LIBRARIES})
+        # target_link_libraries(_${MODULE_NAME} PRIVATE Boost::headers)
+    endif()
 
     # create module dir
     file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/python/${ADD_PY_MOD_NESTED_NAME})
@@ -94,7 +100,7 @@ addPythonModule(
         nifty
     SOURCES
         nifty.cxx
-    LIBRRARIES
+    LIBRARIES
         ${NIFTY_LP_SOLVER_LIBS})
 
 

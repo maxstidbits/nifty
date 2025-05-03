@@ -6,7 +6,7 @@
 #include <boost/version.hpp>
 
 #include <boost/iterator/counting_iterator.hpp>
-#include <xtensor/xtensor.hpp>
+#include <xtensor.hpp>
 
 #include "nifty/container/boost_flat_set.hxx"
 #include "nifty/container/flat_set.hxx"

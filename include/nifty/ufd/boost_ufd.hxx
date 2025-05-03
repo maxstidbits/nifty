@@ -1,7 +1,7 @@
 #pragma once
 
 #include <boost/pending/disjoint_sets.hpp>
-#include <xtensor/xtensor.hpp>
+#include <xtensor.hpp>
 
 
 namespace nifty {

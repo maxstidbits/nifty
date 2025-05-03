@@ -1,15 +1,16 @@
 REM https://stackoverflow.com/questions/6832666/lnk2019-when-including-asio-headers-solution-generated-with-cmake
-cmake . -G "NMake Makefiles" ^
+mkdir bld
+cd bld
+cmake .. -G "NMake Makefiles" ^
     -DWITH_QPBO=OFF ^
-    -DWITH_HDF5=OFF ^
     -DWITH_GLPK=OFF ^
     -DWITH_CPLEX=OFF ^
     -DWITH_GUROBI=OFF ^
     -DBUILD_CPP_TEST=OFF ^
-    -DCMAKE_PREFIX_PATH="%CONDA_PREFIX%" ^
-    -DCMAKE_INSTALL_PREFIX="%CONDA_PREFIX%" ^
-    -DPython_NumPy_INCLUDE_DIRS=$(python -c "import numpy; print(numpy.get_include())") ^
-    -DCMAKE_CXX_FLAGS="/std:c++17 /EHsc" ^
+    -DCMAKE_PREFIX_PATH:PATH="%CONDA_PREFIX%" ^
+    -DCMAKE_INSTALL_PREFIX:PATH="%CONDA_PREFIX%" ^
+    -DPython_EXECUTABLE:PATH="%CONDA_PREFIX%\python.exe" ^
+    -DCMAKE_CXX_FLAGS="/EHsc" ^
     -DBUILD_NIFTY_PYTHON=ON ^
     -DWITH_HDF5=OFF ^
     -DWITH_Z5=ON ^

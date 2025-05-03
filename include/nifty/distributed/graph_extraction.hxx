@@ -4,8 +4,8 @@
 #include <set>
 #include <boost/functional/hash.hpp>
 
-#include "xtensor/xtensor.hpp"
-#include "xtensor/xadapt.hpp"
+#include "xtensor.hpp"
+#include "xtensor/containers/xadapt.hpp"
 
 #include "z5/factory.hxx"
 #include "z5/attributes.hxx"

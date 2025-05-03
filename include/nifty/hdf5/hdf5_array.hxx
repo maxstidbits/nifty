@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include "xtensor/xarray.hpp"
+#include "xtensor/containers/xarray.hpp"
 
 #include "nifty/hdf5/hdf5.hxx"
 #include "nifty/tools/block_access.hxx"
