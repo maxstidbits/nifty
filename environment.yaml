@@ -5,7 +5,7 @@ dependencies:
   - python 3.12
   - numpy
   - xtensor >=0.26,<0.27
-  - xtensor-python >=0.28,<0.29
+  # Note: xtensor-python now installed via pip from custom GitHub source
   - libboost-devel
   - libvigra
   # Vigra Numpy is used at link time too
@@ -16,3 +16,6 @@ dependencies:
   - blosc
   - bzip2
   - zlib
+  - pip
+  - pip:
+    - git+https://github.com/maxstidbits/xtensor-python.git

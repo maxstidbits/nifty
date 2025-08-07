@@ -1,0 +1,109 @@
+# NIFTY Package Manifest
+# This file specifies which files to include in the source distribution
+
+# Include source files
+recursive-include src/python/lib *.cxx *.hxx *.hpp *.h
+recursive-include src/python/module *.py
+
+# Include C++ headers
+recursive-include include *.hxx *.hpp *.h
+
+# Include git submodules (selected files only)
+# LP_MP submodule
+recursive-include externals/LP_MP/include *.hpp *.h
+recursive-include externals/LP_MP/lib *.cpp *.hpp *.h *.cxx
+recursive-include externals/LP_MP/external/meta/include *.hpp *.h
+recursive-include externals/LP_MP/external/Catch/include *.hpp *.h
+recursive-include externals/LP_MP/external/cpp_sort/include *.hpp *.h
+recursive-include externals/LP_MP/external/opengm/include *.hpp *.h *.hxx
+recursive-include externals/LP_MP/external/PEGTL *.hpp *.h
+recursive-include externals/LP_MP/external/cereal/include *.hpp *.h
+recursive-include externals/LP_MP/external/tclap/include *.h
+
+# QPBO submodule
+recursive-include externals/qpbo *.cpp *.h
+
+# Configuration and documentation files
+include pyproject.toml
+include setup.py
+include setup.cfg
+include MANIFEST.in
+include README.md
+include LICENSE
+include .gitignore
+include .gitmodules
+
+# Include architecture documentation
+include SETUPTOOLS_MIGRATION_STRATEGY.md
+include TECHNICAL_SPECIFICATIONS.md
+include EXAMPLE_CONFIGURATIONS.md
+include IMPLEMENTATION_GUIDE.md
+include WHEEL_VARIANTS_STRATEGY.md
+include MIGRATION_SUMMARY.md
+
+# Include CMake configuration for reference
+include CMakeLists.txt
+include NIFTYConfig.cmake.in
+recursive-include cmake *.cmake *.cmake.in
+
+# Include conda recipe for reference
+recursive-include conda-recipe *.yaml *.yml *.sh *.bat *.py
+include conda-recipe/README
+
+# Include environment configuration
+include environment.yaml
+include build_conda.sh
+
+# Include pre-commit configuration
+include .pre-commit-config.yaml
+
+# Include GitHub workflows
+recursive-include .github *.yml *.yaml
+
+# Exclude unwanted files and directories
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .DS_Store
+global-exclude *.so
+global-exclude *.pyd
+global-exclude *.dll
+global-exclude *.dylib
+global-exclude .git*
+global-exclude *.orig
+global-exclude *.rej
+global-exclude *~
+
+# Exclude build artifacts
+global-exclude build/*
+global-exclude dist/*
+global-exclude *.egg-info/*
+global-exclude .eggs/*
+
+# Exclude test files from distribution
+global-exclude */test/*
+global-exclude */tests/*
+prune src/test
+prune src/python/test
+
+# Exclude documentation source (keep only final docs)
+prune docsrc
+
+# Exclude scripts (development utilities)
+prune scripts
+
+# Exclude IDE and editor files
+global-exclude .vscode/*
+global-exclude .idea/*
+global-exclude *.swp
+global-exclude *.swo
+
+# Exclude temporary files
+global-exclude *.tmp
+global-exclude *.temp
+global-exclude .coverage
+global-exclude htmlcov/*
+
+# Exclude OS-specific files
+global-exclude Thumbs.db
+global-exclude .DS_Store
+global-exclude desktop.ini

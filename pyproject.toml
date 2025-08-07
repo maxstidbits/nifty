@@ -1,0 +1,116 @@
+[build-system]
+requires = [
+    "setuptools>=64",
+    "pybind11>=2.10.0",
+    "numpy>=1.19.0",
+    "wheel",
+    "xtensor-python @ git+https://github.com/maxstidbits/xtensor-python.git",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nifty"
+dynamic = ["version", "description"]
+authors = [
+    {name = "Thorsten Beier", email = "derthorstenbeier@gmail.com"},
+]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: C++",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = [
+    "graph",
+    "segmentation",
+    "multicut",
+    "image-processing",
+    "computer-vision",
+]
+dependencies = [
+    "numpy>=1.19.0",
+    "scikit-image",
+]
+
+[project.optional-dependencies]
+solvers = [
+    "gurobipy",  # Optional: GUROBI solver
+]
+hdf5 = [
+    "h5py>=3.0.0",  # Optional: HDF5 support
+]
+z5 = [
+    "z5py>=2.0.5",  # Optional: Z5 support
+]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+    "black",
+    "isort",
+    "mypy",
+]
+docs = [
+    "sphinx>=4.0",
+    "sphinx-rtd-theme",
+    "myst-parser",
+]
+
+[project.urls]
+Homepage = "https://github.com/DerThorsten/nifty"
+Documentation = "https://nifty.readthedocs.io/"
+Repository = "https://github.com/DerThorsten/nifty.git"
+Issues = "https://github.com/DerThorsten/nifty/issues"
+
+[tool.setuptools]
+zip-safe = false
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src/python/module"]
+include = ["nifty*"]
+
+[tool.setuptools.package-data]
+nifty = ["*.so", "*.pyd", "*.dll"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["nifty"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

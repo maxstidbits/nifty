@@ -9,6 +9,11 @@ source:
 
 build:
   number: 1000
+  script: |
+    # Install xtensor-python from GitHub source during build
+    pip install git+https://github.com/maxstidbits/xtensor-python.git
+    # Run the standard Python build
+    python -m pip install . -vv
 
 
 requirements:
@@ -28,7 +33,9 @@ requirements:
     - bzip2
     - zlib
     - xtensor
-    - xtensor-python
+    # xtensor-python: Installed via pip during build process from custom GitHub source
+    - pip
+    - git  # Required for pip install from git repository
     - nlohmann_json
 
   run:
